@@ -1,0 +1,79 @@
+$pFont:       'Merriweather Sans', Helvetica, sans-serif;
+$sFont:       Lato, sans-serif;
+$red1:     	  #e80000;
+$blue1:       #005ac4;
+$red2:     	  #a40101;
+$blue2:       #003777;
+$grey1:       hsla(0, 0%, 90%, 1);
+$grey2:       hsla(0, 0%, 82%, 1);
+
+$white:       hsla(   0,   0%, 100%, 1 );
+$grey:        hsla(   0,   0%,  60%, 1 );
+$black:       hsla(   0,   0%,  20%, 1 ); //#333333
+
+$break-1085:  1085px;
+$break-727:   727px;
+$break-420:   420px;
+
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier) {
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+@mixin fSizeL {
+
+		font-size: 22px;
+		line-height: 1.2em;
+
+	@media screen and (max-width: $break-1085) {
+		font: {
+			size: 20px;
+		}
+	}
+
+	@media screen and (max-width: $break-727) {
+		font: {
+			size: 17px;
+		}
+	}
+}
+
+@mixin fSizeM {
+
+		font-size: 18px;
+		line-height: 1.2em;
+
+	@media screen and (max-width: $break-1085) {
+		font: {
+			size: 16px;
+		}
+	}
+
+	@media screen and (max-width: $break-727) {
+		font: {
+			size: 14px;
+		}
+	}
+}
+
+@mixin fSizeS {
+
+		font-size: 12px;
+
+	@media screen and (max-width: $break-1085) {
+
+	}
+
+	@media screen and (max-width: $break-727) {
+
+		font-size: 11px;
+
+	}
+}

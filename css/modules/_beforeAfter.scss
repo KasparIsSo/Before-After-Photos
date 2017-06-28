@@ -1,0 +1,114 @@
+$width:     600;
+$height:    2 * $width / 3;
+
+.beforeAfter {
+	cursor: pointer;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	float: left;
+	// margin: 20px;
+	// display: inline-block;
+	width: $width * 1px;
+	padding-top: $height * 1px;
+	// height: $height * 1px;
+	box-sizing: border-box;
+	margin: 10px;
+	// border: {
+	// 	width: 1px;
+	// 	color: $grey;
+	// 	style: solid;
+	// 	radius: 5px;
+	// }
+
+	@media screen and (max-width: $break-1085) {
+		width: 100%;
+		padding-top: 200 / 3 * 1%;
+		margin: 10px 0;
+		// height: 66 * 1%;
+		// border: {
+		// 	radius: none;
+		// 	top: {
+		// 		width: 1px;
+		// 		color: $black;
+		// 		style: solid;
+		// 	}
+		// 	bottom: {
+		// 		width: 1px;
+		// 		color: $grey;
+		// 		style: solid;
+		// 	}
+		// }
+	}
+
+	@include e('images') {
+		overflow: display;
+		display: block;
+		background: {
+			repeat: no-repeat;
+			size: cover;
+		}
+		width: $width * 1px;
+		padding-top: $height * 1px;
+		position: absolute;
+		top: 0;
+		box-sizing: border-box;
+
+		@media screen and (max-width: $break-1085) {
+			width: 100%;
+			padding-top: 2 * 100 / 3 * 1%;
+		}
+
+		@include m('slider') {
+			position: absolute;
+			right: -20px;
+			top: $height/2 - 20 * 1px;;
+
+			@media screen and (max-width: $break-1085) {
+				top: calc(50% - 20px);
+			}
+
+			width: 40px;
+			height: 40px;
+			background: {
+				image: url('../images/sliderIcon.svg');
+				repeat: no-repeat;
+				position: center;
+				size: cover;
+			}
+		}
+
+		@include m('before') {
+			width: $width/2 * 1px;
+
+			@media screen and (max-width: $break-1085) {
+				width: 50%;
+			}
+
+			background: {
+				color: white;
+			}
+			border-right: {
+				width: 2px;
+				color: $black;
+				style: solid;
+			}
+		}
+
+		@include m('after') {
+			background: {
+				color: white;
+			}
+		}
+	}
+
+	@include e('desc') {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 20px;
+		@include m('text') {
+			@include fSizeM;
+		}
+	}
+
+}
